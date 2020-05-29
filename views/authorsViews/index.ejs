@@ -1,0 +1,23 @@
+<%- include('../partials/headerPartial.ejs') %> 
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Actions</td>
+    </tr>
+    <% allAuthorsReferenceForEJS.forEach(function(eachAuthor) { %>
+        <tr>
+            <td><%= eachAuthor.name %></td>
+            <td>
+                <a href="/authors/<%= eachAuthor._id %>">DETAILS</a>
+                <form action="/authors/<%= eachAuthor._id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <input type="submit" value="DELETE">
+                </form>
+            </td>
+        </tr>
+    <% }) %>
+</table>
+
+
+
+<%- include('../partials/footerPartial.ejs') %> 

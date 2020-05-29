@@ -1,0 +1,21 @@
+<%- include('../partials/headerPartial.ejs') %> 
+
+<form action="/books" method="POST">
+    <label>Author:</label>
+    <select name="author">
+        <% allAuthorsReferenceForEJS.map(function(eachAuthor) { %>
+            <option value="<%= eachAuthor._id %>">
+                <%= eachAuthor.name %>
+            </option>
+        <% }) %>
+      </select><br>
+    <label>Title:</label>
+    <input type="text" name="title"><br>
+    <label>Year Published:</label>
+    <input type="text" name="yearPublished"><br>
+    <label>Cover Image URL:</label>
+    <input type="text" name="coverImageUrl"><br>
+    <input type="submit" value="Add Book">
+</form>
+
+<%- include('../partials/footerPartial.ejs') %> 

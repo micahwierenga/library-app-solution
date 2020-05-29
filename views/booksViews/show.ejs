@@ -1,0 +1,13 @@
+<%- include('../partials/headerPartial.ejs') %> 
+
+
+<h3><%= bookReferenceForEJS.title %>, by <%= bookReferenceForEJS.author.name %></h3>
+
+<p>Published in <%= bookReferenceForEJS.yearPublished %></p>
+
+<img src="<%= bookReferenceForEJS.coverImageUrl %>" alt=""><br><br>
+
+<a href="/books/<%= bookReferenceForEJS._id %>/edit">Edit Book</a>
+
+
+<%- include('../partials/footerPartial.ejs') %> 
